@@ -229,6 +229,40 @@ class HFSFileManager:
          #  sys.exit('_call_hmkdir error: {0}'.format(e.output,))
          print('_call_hmkdir error: {0}'.format(e.output,))
        return hmkdir_output
+    def _call_hdel(self,hfsfilename):
+       #hfsfilename="\":"+hfsfilename+"\""
+       hfsfilename=":"+hfsfilename
+       hdel_output=''
+       try:
+           hdel_output = subprocess.check_output(['hdel', hfsfilename],
+                                                stderr=subprocess.STDOUT,shell=False)
+           try:
+               hdel_output = hdel_output.decode('utf-8')
+           except:
+               hdel_output = hdel_output.decode('macroman') # Just in case
+               # It will fail ungracefully here if neither encoding works
+       except subprocess.CalledProcessError as e:
+#        hdel_output = (True, e)
+         #  sys.exit('_call_hdel error: {0}'.format(e.output,))
+         print('_call_hdel error: {0}'.format(e.output,))
+       return hdel_output
+    def _call_hrmdir(self,hfsfilename):
+       #hfsfilename="\":"+hfsfilename+"\""
+       hfsfilename=":"+hfsfilename
+       hrmdir_output=''
+       try:
+           hrmdir_output = subprocess.check_output(['hrmdir', hfsfilename],
+                                                stderr=subprocess.STDOUT,shell=False)
+           try:
+               hrmdir_output = hrmdir_output.decode('utf-8')
+           except:
+               hrmdir_output = hrmdir_output.decode('macroman') # Just in case
+               # It will fail ungracefully here if neither encoding works
+       except subprocess.CalledProcessError as e:
+#        hrmdir_output = (True, e)
+         #  sys.exit('_call_hrmdir error: {0}'.format(e.output,))
+         print('_call_hrmdir error: {0}'.format(e.output,))
+       return hrmdir_output
      
 
 
@@ -425,20 +459,25 @@ class HFSFileManager:
            return self.fileManagerError()
 #===============================================================================
     #def delete(self):
+    def recursive_delete(self,file):
+        if self.is_dir(file):
+            # get list of everything in dir 
+            dirlist=self.get_dir_list(file)
+            for d in dirlist:
+              newf=os.path.join(file,d['name'])
+              self.recursive_delete(newf)
+            # rmdir the empty directory
+            file=file.replace("/",":")
+            self._call_hrmdir(file)
+        else:
+            file=file.replace("/",":")
+            self._call_hdel(file)
+
     def delete(self,file):
         ''' Deletes an existed file or folder. '''
-        #file    = request.args.get('path').lstrip("/")
-        path    = os.path.join(self.root,file)
-        response = FileManagerResponse(self.root,path,self.mountname)
-        response.set_response()
-        if (self.is_safe_path(path)):
-           if os.path.isdir(path):
-               shutil.rmtree(path)
-           elif os.path.isfile(path):
-               os.remove(path)
-           return jsonify(response.response)
-        else:
-           return self.fileManagerError()
+        self._call_hvol()
+        self.recursive_delete(file)
+        return self.readfolder(file)
 #===============================================================================
     #def download(self):
     def download(self,file):

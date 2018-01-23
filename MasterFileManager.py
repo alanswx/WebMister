@@ -185,8 +185,8 @@ class MasterFileManager:
            if dir:
              # create destination folder
              print('create dest folder:['+dst+'] ['+src+']')
-             dst_name=os.path.join(dst,src)
-             dst_fm.addfolder(dst,src)
+             dst_name=src #os.path.join(dst,src)
+             dst_fm.addfolder('',src)
              # get list of files in dst_name
              src_list=src_fm.get_dir_list(src)
              for entry in src_list:
