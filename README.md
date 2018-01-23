@@ -10,4 +10,4 @@ The Web UI has a few parts.
 
 ##  Filemanager Python3 Flask Application
 
-This includes FileManagerREADME.md  
+This includes [FileManagerREADME.md](FileManagerREADME.md)  
