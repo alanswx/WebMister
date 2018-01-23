@@ -307,6 +307,7 @@ class FileManager:
         return jsonify(result)
 #===============================================================================
     def extract(self,source,target):
+        print('extract source:'+source+' target:'+target)
         ''' Extract files and folders from zip archive.
         Note that only the first-level of extracted files and folders are returned
         in the response. All nested files and folders should be omitted for correct

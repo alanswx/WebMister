@@ -312,28 +312,15 @@ class MasterFileManager:
         source          = request.form.get('source').lstrip("/")
         src_found_mount=self.mounts.lookupmount(source)
         srcfm = src_found_mount['handler']
+        newsrc_path=src_found_mount['path']
         print("*** src_found_mount['path']:"+src_found_mount['path']+" **")
         source_path     = os.path.join(self.root,source)
         target          = request.form.get('target').lstrip("/")
         target_found_mount=self.mounts.lookupmount(target)
         targetfm = target_found_mount['handler']
+        newtarget_path=target_found_mount['path']
         print("*** target_found_mount['path']:"+target_found_mount['path']+" **")
-        return srcfm.extract(src_found_mount['path'],target_found_mount['path'])
-        target_path     = os.path.join(self.root,target)
-        if (self.is_safe_path(source_path) and self.is_safe_path(target_path)):
-           with ZipFile(source_path,"r") as zip_ref:
-               zip_ref.extractall(target_path)
-           data            = []
-           for file in os.listdir(target_path):
-               path        = os.path.join(target_path,file)
-               response    = FileManagerResponse(path)
-               response.set_data()
-               data.append(response.data)
-           results         = {}
-           results['data'] = data
-           return jsonify(results)
-        else:
-           return self.fileManagerError()
+        return srcfm.extract(newsrc_path,newtarget_path)
 #===============================================================================
     def error(self,title='Server Error. Unexpected Mode.'):
         '''  '''
