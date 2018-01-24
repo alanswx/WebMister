@@ -27,8 +27,10 @@
             "replace",
             "delete",
             "extract",
-            "edit"
+            "edit",
+            "createFolder"
         ]
+
     },
     "filetree": {
         "enabled": true,
