@@ -6,10 +6,18 @@ from flask import Flask, request, send_from_directory
 from jinja2 import Markup, PackageLoader, Environment, FileSystemLoader, ChoiceLoader
 dir_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),'static')
 app = Flask(__name__)
-os.environ['HOME']='/var/www'
 
 from File import bluePrint as fileBluePrint
-app.register_blueprint(fileBluePrint)
+# for some reason on lighttpd with fastcgi the home directory points to /root
+# we need to switch it
+# also - we are already in the subpath /files so we remove that
+if os.environ['HOME']=='/root':
+   os.environ['HOME']='/var/www'
+   app.register_blueprint(fileBluePrint)
+else:
+   # make sure we register ourselves on the subpath /files
+   app.register_blueprint(fileBluePrint, url_prefix='/files')
+
 
 @app.route("/")
 def hello():
