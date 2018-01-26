@@ -7,7 +7,7 @@ from mimetypes import MimeTypes
 from zipfile import ZipFile
 from flask import request, jsonify, send_file
 from werkzeug.utils import secure_filename
-from .FileManagerResponse import *
+from FileManagerResponse import *
 
 
 
@@ -84,6 +84,7 @@ class MasterFileManager:
     def readfile(self):
         ''' Provides data for a single file. '''
         file    = request.args.get('path').lstrip("/")
+        print('lookup ['+file+']')
         found_mount=self.mounts.lookupmount(file)
         fm = found_mount['handler']
         print("*** found_mount['path']:"+found_mount['path']+" **")

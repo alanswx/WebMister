@@ -48,7 +48,7 @@
             "useCtrlKey": true
         },
         "renderer": {
-            "position": false,
+            "position": "bottom",
             "indexFile": "readme.md"
         }
     },

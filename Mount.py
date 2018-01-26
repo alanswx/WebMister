@@ -7,9 +7,9 @@ from mimetypes import MimeTypes
 from zipfile import ZipFile
 from flask import request, jsonify, send_file
 from werkzeug.utils import secure_filename
-from .FileManager import *
-from .HFSFileManager import *
-from .FileManagerResponse import *
+from FileManager import *
+from HFSFileManager import *
+from FileManagerResponse import *
 
 
 
@@ -20,9 +20,9 @@ class Mount:
     # start out by initializing the root of the file system
     def __init__(self):
        self.mountfileunix(self.root,'MiSTer')
-       self.mountfileunix('/home/alans/Downloads','Downloads')
-       self.mountfilehfs('/home/alans/Downloads/MinivMacBootv2.dsk','MinivMacBootv2.dsk')
-       self.mountfilehfs('/home/alans/Downloads/games-o.dsk','gameso')
+       self.mountfileunix('/home/pi/InstallerMister/misterinst','Cores')
+       #self.mountfilehfs('/home/alans/Downloads/MinivMacBootv2.dsk','MinivMacBootv2.dsk')
+       #self.mountfilehfs('/home/alans/Downloads/games-o.dsk','gameso')
 
     def getmounts(self):
        return self.mounts

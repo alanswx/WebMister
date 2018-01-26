@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 from flask import Blueprint, request, render_template, make_response
-from .FileManager import FileManager
-from .MasterFileManager import MasterFileManager
-from .Mount import Mount
+from FileManager import FileManager
+from MasterFileManager import MasterFileManager
+from Mount import Mount
 
 mounts = Mount()
 
-bluePrint = Blueprint('fileBluePrint', __name__, url_prefix='/files',template_folder='templates')
+#bluePrint = Blueprint('fileBluePrint', __name__, url_prefix='/files',template_folder='templates')
+bluePrint = Blueprint('fileBluePrint', __name__, template_folder='templates')
 
 @bluePrint.route('/filemanager')
 def indexAction():

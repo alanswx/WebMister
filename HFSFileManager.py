@@ -8,7 +8,7 @@ from mimetypes import MimeTypes
 from zipfile import ZipFile
 from flask import request, jsonify, send_file
 from werkzeug.utils import secure_filename
-from .HFSFileManagerResponse import *
+from HFSFileManagerResponse import *
 from io import BytesIO
 import subprocess
 import re
@@ -40,8 +40,8 @@ class HFSFileManager:
                hmount_output = hmount_output.decode('macroman') # Just in case
                # It will fail ungracefully here if neither encoding works
        except subprocess.CalledProcessError as e:
-#        hmount_output = (True, e)
-           sys.exit('_call_hmount error: {0}'.format(e.output,))
+         hmount_output =  e
+         #  sys.exit('_call_hmount error: {0}'.format(e.output,))
        return hmount_output
 
     def _call_hvol(self):
@@ -57,7 +57,8 @@ class HFSFileManager:
                # It will fail ungracefully here if neither encoding works
        except subprocess.CalledProcessError as e:
 #        hmount_output = (True, e)
-           sys.exit('_call_hmount error: {0}'.format(e.output,))
+         hmount_output = e
+         #sys.exit('_call_hmount error: {0}'.format(e.output,))
        return hmount_output
 
     def _call_hls(self,path):
