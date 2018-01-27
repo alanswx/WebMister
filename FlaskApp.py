@@ -1,23 +1,31 @@
 import os
 import subprocess
 import sys
+import json
 
-from flask import Flask, request, send_from_directory
+from flask import Flask, request, send_from_directory, render_template
 from jinja2 import Markup, PackageLoader, Environment, FileSystemLoader, ChoiceLoader
 dir_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),'static')
 app = Flask(__name__)
 
+#if os.environ['HOME']=='/root':
+#   os.environ['HOME']='/var/www'
+#else
+#os.environ['HOME']='/var/www'
+ 
+
 from File import bluePrint as fileBluePrint
-# for some reason on lighttpd with fastcgi the home directory points to /root
-# we need to switch it
-# also - we are already in the subpath /files so we remove that
 if os.environ['HOME']=='/root':
    os.environ['HOME']='/var/www'
    app.register_blueprint(fileBluePrint)
 else:
-   # make sure we register ourselves on the subpath /files
    app.register_blueprint(fileBluePrint, url_prefix='/files')
 
+@app.route("/core")
+def core():
+    with open('manifest.json', 'r') as f:
+      d = json.load(f)
+    return render_template('core.html', manifest=d)
 
 @app.route("/")
 def hello():

@@ -1,0 +1,811 @@
+{
+    "main": {
+        "type": "mister",
+        "name": "MiSTer Main",
+        "repo": "MiSTer-devel/Main_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": "MiSTer",
+        "additionalData": null
+    },
+    "boot": {
+        "type": "mister",
+        "name": "MiSTer Menu",
+        "repo": "MiSTer-devel/Menu_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": "menu.rbf",
+        "additionalData": null
+    },
+    "archie": {
+        "type": "computer",
+        "name": "Acorn Archimedes",
+        "repo": "MiSTer-devel/Archie_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "Archie",
+        "additionalData": [
+            {
+                "name": "Risc OS ROM",
+                "remote": "releases/riscos.rom",
+                "dir": "Archie",
+                "target": "riscos.rom",
+                "type": "binary"
+            }
+        ]
+    },
+    "amiga": {
+        "type": "computer",
+        "name": "Commodore Amiga",
+        "repo": "MiSTer-devel/Minimig-AGA_MiSTer",
+        "branch": "MiSTer",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "Amiga_external",
+        "additionalData": null
+    },
+    "ao486": {
+        "type": "computer",
+        "name": "Intel 486",
+        "repo": "MiSTer-devel/ao486_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "ao486",
+        "additionalData": [
+            {
+                "name": "Boot ROM 1",
+                "remote": "releases/bios/boot0.rom",
+                "dir": "ao486",
+                "target": "boot0.rom",
+                "type": "binary"
+            },
+            {
+                "name": "Boot ROM 2",
+                "remote": "releases/bios/boot1.rom",
+                "dir": "ao486",
+                "target": "boot1.rom",
+                "type": "binary"
+            }
+        ]
+    },
+    "apogee": {
+        "type": "computer",
+        "name": "Apogee BK-01",
+        "repo": "MiSTer-devel/Apogee_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "Apogee",
+        "additionalData": [
+            {
+                "name": "Apogee Boot ROM",
+                "remote": "extra/apogee.rom",
+                "dir": null,
+                "target": "apogee.rom",
+                "type": "binary"
+            }
+        ]
+    },
+    "appleii": {
+        "type": "computer",
+        "name": "Apple II",
+        "repo": "MiSTer-devel/Apple-II_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "Apple-II",
+        "additionalData": null
+    },
+    "macplus": {
+        "type": "computer",
+        "name": "Apple Macintosh Plus",
+        "repo": "MiSTer-devel/MacPlus_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "MacPlus",
+        "additionalData": [
+            {
+                "name": "Mac OS 6 Boot Disk",
+                "remote": "releases/Disk604.dsk",
+                "dir": "MacPlus",
+                "target": "Disk604.dsk",
+                "type": "binary"
+            },
+            {
+                "name": "Mac OS 6 Boot ROM",
+                "remote": "releases/boot.rom",
+                "dir": "MacPlus",
+                "target": "boot.rom",
+                "type": "binary"
+            },
+            {
+                "name": "Mac OS 6 Formatted VHD",
+                "remote": "releases/empty_hdd.zip",
+                "dir": "MacPlus",
+                "file": null,
+                "target": null,
+                "type": "zip"
+            }
+        ]
+    },
+    "atari800": {
+        "type": "computer",
+        "name": "Atari 800",
+        "repo": "MiSTer-devel/Atari800_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "Atari800_external",
+        "additionalData": [
+            {
+                "name": "Atari 800 External SD Card Contents",
+                "remote": "releases/sdcard.zip",
+                "dir": "Atari800_external",
+                "file": null,
+                "target": null,
+                "type": "zip"
+            }
+        ]
+    },
+    "atari2600": {
+        "type": "console",
+        "name": "Atari 2600",
+        "repo": "MiSTer-devel/Atari2600_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "Atari2600",
+        "additionalData": null
+    },
+    "atari5200": {
+        "type": "console",
+        "name": "Atari 5200",
+        "repo": "MiSTer-devel/Atari800_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "Atari5200_external",
+        "additionalData": [
+            {
+                "name": "Atari 5200 External SD Card Contents",
+                "remote": "releases/sdcard.zip",
+                "dir": "Atari5200_external",
+                "file": null,
+                "target": null,
+                "type": "zip"
+            }
+        ]
+    },
+    "bk0011m": {
+        "type": "computer",
+        "name": "Electronika BK0011M",
+        "repo": "MiSTer-devel/BK0011M_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "BK0011M",
+        "additionalData": [
+            {
+                "name": "BK0011M Sample Disk 1",
+                "remote": "extra/ANDOS330.DSK",
+                "dir": "BK0011M",
+                "target": "ANDOS330.DSK",
+                "type": "binary"
+            },
+            {
+                "name": "BK0011M Sample Disk 2",
+                "remote": "extra/CSIDOS_330.DSK",
+                "dir": "BK0011M",
+                "target": "CSIDOS_330.DSK",
+                "type": "binary"
+            },
+            {
+                "name": "BK0011M Sample Disk 3",
+                "remote": "extra/CSIDOS_332MIR.DSK",
+                "dir": "BK0011M",
+                "target": "CSIDOS_332MIR.DSK",
+                "type": "binary"
+            }
+        ]
+    },
+    "colecovision": {
+        "type": "console",
+        "name": "Coleco ColecoVision",
+        "repo": "MiSTer-devel/ColecoVision_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "Coleco",
+        "additionalData": null
+    },
+    "c64": {
+        "type": "computer",
+        "name": "Commodore 64",
+        "repo": "MiSTer-devel/C64_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "C64",
+        "additionalData": null
+    },
+    "pet2001": {
+        "type": "computer",
+        "name": "Commodore PET",
+        "repo": "MiSTer-devel/PET2001_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "PET2001",
+        "additionalData": null
+    },
+    "msx": {
+        "type": "computer",
+        "name": "MSX",
+        "repo": "MiSTer-devel/MSX_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "MSX_external",
+        "additionalData": [
+            {
+                "name": "MSX External SD Card Contents",
+                "remote": "Utils/sdcreate.zip",
+                "file": "sdbios/OCM-BIOS.DAT",
+                "dir": "MSX_external",
+                "target": "OCM-BIOS.DAT",
+                "type": "zip"
+            }
+        ]
+    },
+    "nes": {
+        "type": "console",
+        "name": "Nintendo Entertainment System",
+        "repo": "MiSTer-devel/NES_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "NES",
+        "additionalData": null
+    },
+    "samcoupe": {
+        "type": "computer",
+        "name": "SAM Coupe",
+        "repo": "MiSTer-devel/SAM-Coupe_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "SAMCoupe",
+        "additionalData": null
+    },
+    "genesis": {
+        "type": "console",
+        "name": "SEGA Genesis",
+        "repo": "MiSTer-devel/FpgaGen_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "FpgaGen",
+        "additionalData": null
+    },
+    "sms": {
+        "type": "console",
+        "name": "SEGA Master System",
+        "repo": "MiSTer-devel/SMS_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "SMS",
+        "additionalData": null
+    },
+    "ql": {
+        "type": "computer",
+        "name": "Sinclair QL",
+        "repo": "MiSTer-devel/QL_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "QL",
+        "additionalData": [
+            {
+                "name": "QL Games Cart",
+                "remote": "releases/GamesCart.mdv",
+                "dir": "QL",
+                "target": "GamesCart.mdv",
+                "type": "binary"
+            },
+            {
+                "name": "QL Boot ROM",
+                "remote": "releases/boot.rom",
+                "dir": "QL",
+                "target": "boot.rom",
+                "type": "binary"
+            },
+            {
+                "name": "Sample MDV",
+                "remote": "releases/crazy.mdv",
+                "dir": "QL",
+                "target": "crazy.mdv",
+                "type": "binary"
+            },
+            {
+                "name": "Minerval & QLSD Boot ROM",
+                "remote": "releases/minerva+qlsd_ql.rom",
+                "dir": "QL",
+                "target": "minerva+qlsd_ql.rom",
+                "type": "binary"
+            }
+        ]
+    },
+    "specialist": {
+        "type": "computer",
+        "name": "Specialist",
+        "repo": "MiSTer-devel/Specialist_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "Specialist",
+        "additionalData": null
+    },
+    "turbografx16": {
+        "type": "console",
+        "name": "NEC TurboGrafx 16",
+        "repo": "MiSTer-devel/TurboGrafx16_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "TGFX16",
+        "additionalData": null
+    },
+    "vector06c": {
+        "type": "computer",
+        "name": "Vector-06C",
+        "repo": "MiSTer-devel/Vector-06C_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "Vector-06C",
+        "additionalData": null
+    },
+    "x68000": {
+        "type": "computer",
+        "name": "Sharp X68000",
+        "repo": "MiSTer-devel/X68000_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "X68000",
+        "additionalData": [
+            {
+                "name": "X68000 Boot ROM",
+                "remote": "releases/x68000.rom",
+                "dir": "X68000",
+                "target": "x68000.rom",
+                "type": "binary"
+            }
+        ]
+    },
+    "zxspectrum": {
+        "type": "computer",
+        "name": "Sinclair ZX Spectrum",
+        "repo": "MiSTer-devel/ZX-Spectrum_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "zxspectrum",
+        "additionalData": null
+    },
+    "bagman": {
+        "type": "arcade",
+        "name": "Arcade - Bagman",
+        "repo": "MiSTer-devel/Arcade-Bagman_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "bombjack": {
+        "type": "arcade",
+        "name": "Arcade - Bomb Jack",
+        "repo": "MiSTer-devel/Arcade-BombJack_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "computerspace": {
+        "type": "arcade",
+        "name": "Arcade - Computer Space",
+        "repo": "MiSTer-devel/Arcade-ComputerSpace_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "crazykong": {
+        "type": "arcade",
+        "name": "Arcade - Crazy Kong",
+        "repo": "MiSTer-devel/Arcade-CrazyKong_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "crushroller": {
+        "type": "arcade",
+        "name": "Arcade - Crush Roller",
+        "repo": "MiSTer-devel/Arcade-CrushRoller_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "defender": {
+        "type": "arcade",
+        "name": "Arcade - Defender",
+        "repo": "MiSTer-devel/Arcade-Defender_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "frogger": {
+        "type": "arcade",
+        "name": "Arcade - Frogger",
+        "repo": "MiSTer-devel/Arcade-Frogger_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "galaga": {
+        "type": "arcade",
+        "name": "Arcade - Galaga",
+        "repo": "MiSTer-devel/Arcade-Galaga_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "lizardwizard": {
+        "type": "arcade",
+        "name": "Arcade - Lizard Wizard",
+        "repo": "MiSTer-devel/Arcade-LizardWizard_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "mistertnt": {
+        "type": "arcade",
+        "name": "Arcade - Mr. TNT",
+        "repo": "MiSTer-devel/Arcade-MrTNT_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "mspacman": {
+        "type": "arcade",
+        "name": "Arcade - Ms. Pacman",
+        "repo": "MiSTer-devel/Arcade-MsPacman_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "pacman": {
+        "type": "arcade",
+        "name": "Arcade - Pacman",
+        "repo": "MiSTer-devel/Arcade-Pacman_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "pengo": {
+        "name": "Arcade - Pengo",
+        "repo": "MiSTer-devel/Arcade-Pengo_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "phoenix": {
+        "type": "arcade",
+        "name": "Arcade - Phoenix",
+        "repo": "MiSTer-devel/Arcade-Phoenix_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "pooyan": {
+        "type": "arcade",
+        "name": "Arcade - Pooyan",
+        "repo": "MiSTer-devel/Arcade-Pooyan_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "scramble": {
+        "type": "arcade",
+        "name": "Arcade - Scramble",
+        "repo": "MiSTer-devel/Arcade-Scramble_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "superglob": {
+        "type": "arcade",
+        "name": "Arcade - Super Glob",
+        "repo": "MiSTer-devel/Arcade-SuperGlob_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "timepilot": {
+        "type": "arcade",
+        "name": "Arcade - Time Pilot",
+        "repo": "MiSTer-devel/Arcade-TimePilot_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "xevious": {
+        "type": "arcade",
+        "name": "Arcade - Xevious",
+        "repo": "MiSTer-devel/Arcade-Xevious_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "pacmanic": {
+        "type": "arcade",
+        "name": "Arcade - Pacmanic Miner",
+        "repo": "MiSTer-devel/Arcade-PacmanicMiner_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "snapjack": {
+        "type": "arcade",
+        "name": "Arcade - SnapJack",
+        "repo": "MiSTer-devel/Arcade-SnapJack_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "cosmicavenger": {
+        "type": "arcade",
+        "name": "Arcade - Cosmic Avenger",
+        "repo": "MiSTer-devel/Arcade-CosmicAvenger_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "dorodon": {
+        "type": "arcade",
+        "name": "Arcade - Dorodon",
+        "repo": "MiSTer-devel/Arcade-Dorodon_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "ladybug": {
+        "type": "arcade",
+        "name": "Arcade - Lady Bug",
+        "repo": "MiSTer-devel/Arcade-LadyBug_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "galaxian": {
+        "type": "arcade",
+        "name": "Arcade - Galaxian",
+        "repo": "MiSTer-devel/Arcade-Galaxian_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "mooncresta": {
+        "type": "arcade",
+        "name": "Arcade - Moon Cresta",
+        "repo": "MiSTer-devel/Arcade-MoonCresta_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "orbitron": {
+        "type": "arcade",
+        "name": "Arcade - Orbitron",
+        "repo": "MiSTer-devel/Arcade-Orbitron_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "blackhole": {
+        "type": "arcade",
+        "name": "Arcade - Black Hole",
+        "repo": "MiSTer-devel/Arcade-BlackHole_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "mrdonightmare": {
+        "type": "arcade",
+        "name": "Arcade - Mr. Do's Nightmare",
+        "repo": "MiSTer-devel/Arcade-MrDoNightmare_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    },
+    "amidar": {
+        "type": "arcade",
+        "name": "Arcade - Amidar",
+        "repo": "MiSTer-devel/Arcade-Amidar_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null
+    }
+}
