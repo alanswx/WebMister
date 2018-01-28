@@ -1,7 +1,7 @@
 import 'whatwg-fetch';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon, Input, Menu } from 'semantic-ui-react';
+import { Icon, Input, Menu, Image } from 'semantic-ui-react';
 
 class PlatformMenu extends React.Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class PlatformMenu extends React.Component {
     this.state = {
       selected: null,
       manifest: null,
-      searchText: null,
+      searchText: null
     };
     this.search = this.search.bind(this);
     this.handleItemClick = this.handleItemClick.bind(this);
@@ -47,6 +47,19 @@ class PlatformMenu extends React.Component {
     const { selected, manifest, searchText } = this.state;
     const platformList = manifest ? Object.keys(manifest).map((platformName) => {
       const { name } = manifest[platformName];
+      manifest[platformName].platformName=platformName;
+      let imsrc ='';
+      if (manifest[platformName] && manifest[platformName].type)
+      {
+           if (manifest[platformName].type==='arcade')
+           {
+              imsrc =  '/static/images/HakchiMister/arcade/'+platformName+'.png';
+           }
+           else
+           {
+              imsrc = '/static/images/HakchiMister/'+platformName+'.png' ;
+           }
+      }
 
       if (searchText && name && name.toLowerCase().includes(searchText) === false) {
         return null;
@@ -54,14 +67,13 @@ class PlatformMenu extends React.Component {
 
       return (
         <Menu.Item key={platformName} name={platformName} active={selected === platformName} onClick={this.handleItemClick}>
-          <Icon name="gamepad" />
-          { name }
+          { imsrc ? <Image src={imsrc} size="tiny" verticalAlign="middle" /> : '' } <span>{ name }</span>
         </Menu.Item>
       );
     }) : null;
 
     return (
-      <Menu vertical>
+      <Menu vertical fluid >
         <Menu.Item>
           <Input placeholder="Search..." onChange={this.search} />
         </Menu.Item>

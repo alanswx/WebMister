@@ -1,6 +1,6 @@
 import 'whatwg-fetch';
 import React from 'react';
-import { Item, Label, Table, Container, Header, Button } from 'semantic-ui-react';
+import { Icon, Image, Item, Label, Table, Container, Header, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 class Platform extends React.Component {
@@ -13,9 +13,11 @@ class Platform extends React.Component {
   render() {
     const { platform, releases } = this.props;
 
+
     let releaseList = releases ? releases.map((release) => {
 
       const {download_url, name, size, sha} = release;
+      console.log(release);
 
       const humanSize = (size / 1000000).toFixed(2);
       return (
@@ -35,12 +37,32 @@ class Platform extends React.Component {
       );
     }) : null;
 
+    let imsrc ='';
+    let link='';
+    console.log(platform);
+    if (platform)
+    {
+      if (platform.platformName &&  platform.type)
+      {
+           if (platform.type==='arcade')
+           {
+              imsrc =  '/static/images/HakchiMister/arcade/'+platform.platformName+'.png';
+           }
+           else
+           {
+              imsrc = '/static/images/HakchiMister/'+platform.platformName+'.png' ;
+           }
+      }
+      if (platform.additionalDataDir)
+         link='/files/filemanager?exclusiveFolder=/Cores/'+platform.additionalDataDir;
+    }
+
     return platform ? (
       <Container>
         <Item.Group divided>
           <Item>
             <Item.Content>
-              <Item.Header as="a">{ platform.name }</Item.Header>
+              <Item.Header as="a"> { imsrc ? <Image size='medium' src={imsrc} verticalAlign="middle" /> : '' } { platform.name }</Item.Header>
               <Item.Meta>
                 <span>{ platform.repo }</span>
               </Item.Meta>
@@ -48,6 +70,7 @@ class Platform extends React.Component {
               <Item.Extra>
                 <Label>{ platform.type }</Label>
                 <Label>{ platform.additionalData ? 'Additional Data Required' : 'No Additional Data Required'}</Label>
+                { platform.additionalDataDir ? <Label as="a" href={link}><Icon name='folder'/> Browse {platform.additionalDataDir}</Label> : ""}
               </Item.Extra>
             </Item.Content>
           </Item>
