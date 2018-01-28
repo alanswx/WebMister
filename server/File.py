@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 from flask import Blueprint, request, render_template, make_response
-from FileManager import FileManager
-from MasterFileManager import MasterFileManager
-from Mount import Mount
+from server.FileManager import FileManager
+from server.MasterFileManager import MasterFileManager
+from server.Mount import Mount
 
 mounts = Mount()
 

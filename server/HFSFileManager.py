@@ -8,7 +8,7 @@ from mimetypes import MimeTypes
 from zipfile import ZipFile
 from flask import request, jsonify, send_file
 from werkzeug.utils import secure_filename
-from HFSFileManagerResponse import *
+from server.HFSFileManagerResponse import *
 from io import BytesIO
 import subprocess
 import re

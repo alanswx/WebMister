@@ -35,10 +35,10 @@ class Home extends React.Component {
 
     return (
       <Grid>
-        <Grid.Column width={4}>
+        <Grid.Column width={6}>
           <PlatformMenu onPlatformChange={this.onPlatformChange} platform={platform} />
         </Grid.Column>
-        <Grid.Column width={12}>
+        <Grid.Column width={10}>
           <Platform platform={platform} releases={releases} />
         </Grid.Column>
       </Grid>

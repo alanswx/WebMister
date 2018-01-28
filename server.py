@@ -5,15 +5,31 @@ import os
 
 from flask import Flask, send_from_directory
 
+from server.File import bluePrint as fileBluePrint
+
 DIR = sys.path[0]
 
-app = Flask(__name__)
+app = Flask(__name__,static_url_path='/static',static_folder='server/static')
+
+if os.environ['HOME']=='/root':
+   os.environ['HOME']='/var/www'
+   app.register_blueprint(fileBluePrint)
+else:
+   app.register_blueprint(fileBluePrint, url_prefix='/files')
 
 
 @app.route("/")
 def serve():
     return send_from_directory('client/dist', 'index.html')
 
+
+#@app.route('/fonts/<path:path>')
+#def static_file(path):
+#    return app.send_static_file(path)
+
+@app.route('/fonts/<path:path>')
+def send_fonts(path):
+    return send_from_directory('client/src/app/fonts', path)
 
 @app.route("/app.bundle.js")
 def serve_app_bundle():
@@ -75,4 +91,4 @@ def another():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0')
