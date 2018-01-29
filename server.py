@@ -3,14 +3,30 @@ import subprocess
 import sys
 import os
 
-from flask import Flask, send_from_directory
+from flask import Flask, send_from_directory, request
 
 from server.File import bluePrint as fileBluePrint
 
-DIR = sys.path[0]
+from server.Cores import Cores
 
+
+DIR = sys.path[0]
+MISTERDIR  = os.path.join(DIR,"../InstallerMister/misterinst")
+
+
+#
+# The Core class deals with installed files on disk
+#
+core = Cores(DIR,MISTERDIR)
+
+#
+# setup flask and point /static to the right place
 app = Flask(__name__,static_url_path='/static',static_folder='server/static')
 
+#
+# if we are running lighttpd it sets the HOME incorrectly, we fix it and use
+# this to know if we should add /files onto the front of the FileManager paths
+#
 if os.environ['HOME']=='/root':
    os.environ['HOME']='/var/www'
    app.register_blueprint(fileBluePrint)
@@ -21,11 +37,6 @@ else:
 @app.route("/")
 def serve():
     return send_from_directory('client/dist', 'index.html')
-
-
-#@app.route('/fonts/<path:path>')
-#def static_file(path):
-#    return app.send_static_file(path)
 
 @app.route('/fonts/<path:path>')
 def send_fonts(path):
@@ -48,47 +59,16 @@ def load_manifest():
     return json.dumps(d)
 
 
-@app.route("/debug")
-def debug():
-    try:
-        os.environ['HOME'] = '/var/www'
-        hmount_output = ''
-        hfsfilename = '/media/fat/web/WebMister/files/boot.vhd'
-        env = dict(os.environ)
-        env['HOME'] = '/var/www'
-        try:
-            hmount_output = subprocess.check_output(['hmount', hfsfilename], stderr=subprocess.STDOUT, shell=False)
-            # hmount_output = subprocess.check_output(['hmount', hfsfilename], stderr=subprocess.STDOUT,env=env,shell=False)
-            # hmount_output = subprocess.check_output(['strace','hmount', hfsfilename], stderr=subprocess.STDOUT)
-            try:
-                hmount_output = hmount_output.decode('utf-8')
-            except:
-                hmount_output = hmount_output.decode('macroman')  # Just in case
-                # It will fail ungracefully here if neither encoding works
-        except subprocess.CalledProcessError as e:
-            #        hmount_output = (True, e)
-            #           sys.exit('_call_hmount error: {0}'.format(e.output,))
-            hmount_output = ('_call_hmount error: {0}'.format(e.output, ))
-            return hmount_output
-    except Exception as e:
-        return "Hello World!" + str(e)
-    return hmount_output
+@app.route("/api/get_local_files_for_core")
+def local_files_for_core():
+    print(MISTERDIR)
+    corename = request.args.get('core')
+    return json.dumps(core.update_core_from_disk(corename))
 
-
-@app.route("/another")
-def another():
-    hmount_output = ''
-    try:
-        hfsfilename = '/media/fat/web/WebMister/files/boot.vhd'
-        # hmount_output = subprocess.check_output(['/usr/bin/hmount'], stderr=subprocess.STDOUT, shell=True)
-        hmount_output = subprocess.check_output(['/usr/bin/hmount', hfsfilename], stderr=subprocess.STDOUT, shell=True)
-        return hmount_output
-        # return 'in try'
-    except Exception as e:
-
-        return "Hello World!" + str(e) + hmount_output
-        # return "in hello"
-
+@app.route("/api/get_local_files_for_all_cores")
+def local_files_for_all_cores():
+    return json.dumps(core.update_cores_from_disk())
+    
 
 if __name__ == "__main__":
     app.run(debug=True,host='0.0.0.0')
