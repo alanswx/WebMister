@@ -546,7 +546,10 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "crush2.zip",
+        "arcadeRomFiles": "tp1+tp5a+tp2+tp6+tp3+tp7+tp4+tp8+tp1+tp5a+tp2+tp6+tp3+tp7+tp4+tp8+tpa+tpc+tpb+tpd",
+        "arcadeRomOutput": "a.crush.rom"
     },
     "defender": {
         "type": "arcade",
@@ -558,7 +561,10 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "defender.zip",
+        "arcadeRomFiles": "defend.1+defend.4+defend.2+defend.3+defend.9+defend.12+defend.8+defend.11+defend.7+defend.10+defend.6+defend.snd+decoder.2+decoder.3",
+        "arcadeRomOutput": "a.dfndr.rom"
     },
     "frogger": {
         "type": "arcade",
@@ -586,7 +592,10 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "galagamw.zip",
+        "arcadeRomFiles": "3200a.bin+3300b.bin+3400c.bin+3500d.bin+3600e.bin+3700g.bin+2800l.bin+ 2700k.bin+2600j.bin",
+        "arcadeRomOutput": "a.galaga.rom"
     },
     "lizardwizard": {
         "type": "arcade",
@@ -598,7 +607,10 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "lizwiz.zip",
+        "arcadeRomFiles": "6e.cpu+6f.cpu+6h.cpu+6j.cpu+wiza+wizb+wiza+wizb+5e.cpu+5f.cpu",
+        "arcadeRomOutput": "a.lizwiz.rom"
     },
     "mistertnt": {
         "type": "arcade",
@@ -610,7 +622,10 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "mrtnt.zip",
+        "arcadeRomFiles": "tnt.1+tnt.2+tnt.3+tnt.4+tnt.1+tnt.2+tnt.3+tnt.4+tnt.5+tnt.6",
+        "arcadeRomOutput": "a.mrtnt.rom"
     },
     "mspacman": {
         "type": "arcade",
@@ -622,7 +637,10 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "mspacmab.zip",
+        "arcadeRomFiles": "pacman.6e+pacman.6f+pacman.6h+pacman.6j+u5+u5+u6+u7+u7+5e+5f",
+        "arcadeRomOutput": "a.mspcmn.rom"
     },
     "pacman": {
         "type": "arcade",
@@ -634,7 +652,40 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "puckmanb.zip",
+        "arcadeRomFiles": "namcopac.6e+namcopac.6f+namcopac.6h+namcopac.6j+namcopac.6e+namcopac.6f+namcopac.6h+namcopac.6j+pacman.5e+pacman.5f",
+        "arcadeRomOutput": "a.pacman.rom"
+    },
+    "clubpacman": {
+        "type": "arcade",
+        "name": "Arcade - Pacman Club",
+        "repo": "MiSTer-devel/Arcade-PacmanClub_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null,
+        "arcadeRom": "clubpacm.zip",
+        "arcadeRomFiles": "prg.6f+12.5e+14.5h+13.5f+15.5j",
+        "arcadeRomOutput": "a.pacclb.rom"
+    },
+    "pacmanplus": {
+        "type": "arcade",
+        "name": "Arcade - Pacman Plus",
+        "repo": "MiSTer-devel/Arcade-PacmanPlus_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null,
+        "arcadeRom": "pacplus.zip",
+        "arcadeRomFiles": "pacplus.6e+pacplus.6f+pacplus.6h+pacplus.6j+pacplus.6e+pacplus.6f+pacplus.6h+pacplus.6j+pacplus.5e+pacplus.5f",
+        "arcadeRomOutput": "a.pacpls.rom"
     },
     "pengo": {
         "name": "Arcade - Pengo",
@@ -645,7 +696,10 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "pengojpm.zip",
+        "arcadeRomFiles": "ep1689c.8+ep1690b.7+ep1691b.15+ep1692b.14+ep1693b.21+ep1694b.20+ep5118b.32+ep5119c.31+ep1640.92+ep1695.105",
+        "arcadeRomOutput": "a.pengo.rom"
     },
     "phoenix": {
         "type": "arcade",
@@ -657,7 +711,25 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "phoenix.zip",
+        "arcadeRomFiles": "ic45+ic46+ic47+ic48+h5-ic49.5a+h6-ic50.6a+h7-ic51.7a+h8-ic52.8a+ic23.3d+ic24.4d+b1-ic39.3b+b2-ic40.4b",
+        "arcadeRomOutput": "a.phnx.rom"
+    },
+    "ponpoko": {
+        "type": "arcade",
+        "name": "Arcade - Ponpoko",
+        "repo": "MiSTer-devel/Arcade-Ponpoko_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null,
+        "arcadeRom": "ponpoko.zip",
+        "arcadeRomFiles": "ppokoj1.bin+ppokoj2.bin+ppokoj3.bin+ppokoj4.bin+ppoko5.bin+ppoko6.bin+ppoko7.bin+ppokoj8.bin+ppoko9.bin+ppoko10.bin",
+        "arcadeRomOutput": "a.ponpok.rom"
     },
     "pooyan": {
         "type": "arcade",
@@ -669,7 +741,10 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "pooyan.zip",
+        "arcadeRomFiles": "1.4a+2.5a+3.6a+4.7a+8.10g+7.9g+6.9a+5.8a+xx.7a+xx.8a",
+        "arcadeRomOutput": "a.pooyan.rom"
     },
     "scramble": {
         "type": "arcade",
@@ -681,7 +756,10 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "scrambles.zip",
+        "arcadeRomFiles": "2d+2e+2f+2h+2j+2l+2m+2p+5h+5f+ot1.5c+ot2.5d+ot3.5e",
+        "arcadeRomOutput": "a.scrmbl.rom"
     },
     "superglob": {
         "type": "arcade",
@@ -693,7 +771,25 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "sprglbpg.zip",
+        "arcadeRomFiles": "ic8.1+ic7.2+ic15.3+ic14.4+ic8.1+ic7.2+ic15.3+ic14.4+ic92.5",
+        "arcadeRomOutput": "a.sprglb.rom"
+    },
+    "theend": {
+        "type": "arcade",
+        "name": "Arcade - The End",
+        "repo": "MiSTer-devel/Arcade-TheEnd_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null,
+        "arcadeRom": "theend.zip",
+        "arcadeRomFiles": "ic13_1t.bin+ic14_2t.bin+ic15_3t.bin+ic16_4t.bin+ic17_5t.bin+ic18_6t.bin+ ic18_6t.bin+ic18_6t.bin+ic31_1c.bin+ic30_2c.bin+ic56_1.bin+ic55_2.bin+ic56_1.bin",
+        "arcadeRomOutput": "a.theend.rom"
     },
     "timepilot": {
         "type": "arcade",
@@ -705,7 +801,55 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "timeplt.zip",
+        "arcadeRomFiles": "tm1+tm2+tm3+tm6+tm4+tm5+tm7",
+        "arcadeRomOutput": "a.tmplt.rom"
+    },
+    "vanvancar": {
+        "type": "arcade",
+        "name": "Arcade - Van Van Car",
+        "repo": "MiSTer-devel/Arcade-VanVanCar_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null,
+        "arcadeRom": "vanvan.zip",
+        "arcadeRomFiles": "van-1.50+van-2.51+van-3.52+van-4.53+van-5.39+van-5.39+van-5.39+van-5.39+van-20.18+van-21.19",
+        "arcadeRomOutput": "a.vvcar.rom"
+    },
+    "warofbug": {
+        "type": "arcade",
+        "name": "Arcade - War of the Bugs",
+        "repo": "MiSTer-devel/Arcade-WarOfTheBugs_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null,
+        "arcadeRom": "warofbug.zip",
+        "arcadeRomFiles": "warofbug.u+warofbug.v+warofbug.w+warofbug.y+warofbug.z+warofbug.z+warofbug.z+warofbug.z+warofbug.1k+warofbug.1k+warofbug.1j+warofbug.1j",
+        "arcadeRomOutput": "a.warbug.rom"
+    },
+    "woodpecker": {
+        "type": "arcade",
+        "name": "Arcade - Woodpecker",
+        "repo": "MiSTer-devel/Arcade-Woodpecker_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null,
+        "arcadeRom": "woodpeck.zip",
+        "arcadeRomFiles": "f.bin+f.bin+f.bin+f.bin+i.bin+e.bin+g.bin+h.bin+a.5e+c.5h+b.5f+d.5j",
+        "arcadeRomOutput": "a.wdpckr.rom"
     },
     "xevious": {
         "type": "arcade",
@@ -717,7 +861,10 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "xevious.zip",
+        "arcadeRomFiles": "xvi_1.3p+xvi_2.3m+xvi_3.2m+xvi_4.2l+xvi_5.3f+xvi_6.3j+xvi_7.2c+xvi_12.3b+xvi_13.3c+xvi_14.3d+xvi_15.4m+xvi_17.4p+xvi_16.4n+xvi_18.4r+xvi_9.2a+xvi_10.2b+xvi_11.2c+50xx.bin+51xx.bin+54xx.bin",
+        "arcadeRomOutput": "a.xevs.rom"
     },
     "pacmanic": {
         "type": "arcade",
@@ -741,7 +888,10 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "snapjack.zip",
+        "arcadeRomFiles": "sj1.c4+sj2.d4+sj3.e4+sj4.h4+sj5.j4+sj6.k4+sj8.l7+sj7.m7+sj9.f7+sj0.h7",
+        "arcadeRomOutput": "a.snpjck.rom"
     },
     "cosmicavenger": {
         "type": "arcade",
@@ -768,7 +918,55 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "dorodon.zip",
+        "arcadeRomFiles": "dorodon.0+dorodon.1+dorodon.2+dorodon.4+dorodon.3+dorodon.5+dorodon.6",
+        "arcadeRomOutput": "a.dorodn.rom"
+    },
+    "dreamshopper": {
+        "type": "arcade",
+        "name": "Arcade - Dream Shopper",
+        "repo": "MiSTer-devel/Arcade-DreamShopper_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null,
+        "arcadeRom": "dremshpr.zip",
+        "arcadeRomFiles": "red_1.50+red_2.51+red_3.52+red_4.53+red_5.39+red_6.40+red_7.41+red_7.41+red-20.18+red-21.19",
+        "arcadeRomOutput": "a.drmshp.rom"
+    },
+    "eeekk": {
+        "type": "arcade",
+        "name": "Arcade - Eeekk",
+        "repo": "MiSTer-devel/Arcade-Eeekk_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null,
+        "arcadeRom": "eeekk.zip",
+        "arcadeRomFiles": "u_2_eeekk_pg03094.u2+u_3_eeekk_pg03094.u3+u_2_eeekk_pg03094.u2+u_3_eeekk_pg03094.u3+5_e_eeekk_pg03094.5e+5_f_eeekk_pg03094.5f",
+        "arcadeRomOutput": "a.eeekk.rom"
+    },
+    "eyes": {
+        "type": "arcade",
+        "name": "Arcade - Eyes",
+        "repo": "MiSTer-devel/Arcade-Eyes_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null,
+        "arcadeRom": "eyes.zip",
+        "arcadeRomFiles": "d7+e7+f7+h7+d7+e7+f7+h7+d5+e5",
+        "arcadeRomOutput": "a.eyes.rom"
     },
     "ladybug": {
         "type": "arcade",
@@ -780,7 +978,10 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "ladybug.zip",
+        "arcadeRomFiles": "l1.c4+l2.d4+l3.e4+l4.h4+l5.j4+l6.k4+l8.l7+l7.m7+l9.f7+l0.h7",
+        "arcadeRomOutput": "a.ladybg.rom"
     },
     "galaxian": {
         "type": "arcade",
@@ -792,7 +993,25 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "galaxianm.zip",
+        "arcadeRomFiles": "galmidw.u+galmidw.v+galmidw.w+galmidw.y+7l+7l+7l+7l+1h.bin+1h.bin+1k.bin+1k.bin",
+        "arcadeRomOutput": "a.galaxn.rom"
+    },
+    "gorkans": {
+        "type": "arcade",
+        "name": "Arcade - Gorkans",
+        "repo": "MiSTer-devel/Arcade-Gorkans_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null,
+        "arcadeRom": "gorkans.zip",
+        "arcadeRomFiles": "gorkans8.rom+gorkans4.rom+gorkans7.rom+gorkans3.rom+gorkans6.rom+gorkans2.rom+gorkans5.rom+gorkans1.rom+gorkans8.rom+gorkans4.rom+gorkans7.rom+gorkans3.rom+gorkans6.rom+gorkans2.rom+gorkans5.rom+gorkans1.rom+gorkgfx4.rom+gorkgfx2.rom+gorkgfx3.rom+gorkgfx1.rom",
+        "arcadeRomOutput": "a.gorkns.rom"
     },
     "mooncresta": {
         "type": "arcade",
@@ -804,7 +1023,25 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "mooncrgx.zip",
+        "arcadeRomFiles": "1+2+3+4+5+6+7+8+1h_1_10.bin+12.chr+9.chr+11.chr",
+        "arcadeRomOutput": "a.mncrst.rom"
+    },
+    "moonpatrol": {
+        "type": "arcade",
+        "name": "Arcade - Moon Patrol",
+        "repo": "MiSTer-devel/Arcade-MoonPatrol_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null,
+        "arcadeRom": "mpatrol.zip",
+        "arcadeRomFiles": "mpa-1.3m+mpa-2.3l+mpa-3.3k+mpa-4.3j+mpe-5.3e+mpe-4.3f+mpb-2.3m+mpb-1.3n+mpe-3.3h+mpe-2.3k+mpe-1.3l+mp-s1.1a",
+        "arcadeRomOutput": "a.moonpt.rom"
     },
     "orbitron": {
         "type": "arcade",
@@ -816,7 +1053,10 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "orbitron.zip",
+        "arcadeRomFiles": "orbitron.3+orbitron.4+orbitron.1+orbitron.2+orbitron.5+orbitron.5+orbitron.5+orbitron.5+orbitron.6+orbitron.6+orbitron.7+orbitron.7",
+        "arcadeRomOutput": "a.orbtrn.rom"
     },
     "blackhole": {
         "type": "arcade",
