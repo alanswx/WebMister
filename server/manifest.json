@@ -459,7 +459,40 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "bagman.zip",
+        "arcadeRomFiles": "e9_b05.bin+f9_b06.bin+f9_b07.bin+k9_b08.bin+m9_b09s.bin+n9_b10.bin+t9_b12.bin+t9_b12.bin+t9_b12.bin +t9_b12.bin +t9_b12.bin +t9_b12.bin +t9_b12.bin +t9_b12.bin +t9_b12.bin +t9_b12.bin +e1_b02.bin+c1_b01.bin+j1_b04.bin+f1_b03s.bin+r9_b11.bin+t9_b12.bin",
+        "arcadeRomOutput": "a.bagman.rom"
+    },
+    "burgertime": {
+        "type": "arcade",
+        "name": "Arcade - Buger Time",
+        "repo": "MiSTer-devel/Arcade-BurgerTime_Mister",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null,
+        "arcadeRom": "btime.zip",
+        "arcadeRomFiles": "aa04.9b+aa06.13b+aa05.10b+aa07.15b+aa12.7k+ab13.9k+ab10.10k+ab11.12k+aa8.13k+ab9.15k+ab00.1b+ab01.3b+ab02.4b+ab03.6b+ab14.12h",
+        "arcadeRomOutput": "a.btime.rom"
+    },
+    "burningrubber": {
+        "type": "arcade",
+        "name": "Arcade - Burning Rubber",
+        "repo": "MiSTer-devel/Arcade-BurningRubber_Mister",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null,
+        "arcadeRom": "brubber.zip",
+        "arcadeRomFiles": "brubber.12c+brubber.12d+bnj4e.bin+bnj4f.bin+bnj4h.bin+bnj10e.bin+bnj10f.bin+bnj6c.bin",
+        "arcadeRomOutput": "a.brubbr.rom"
     },
     "bombjack": {
         "type": "arcade",
@@ -471,7 +504,10 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "bombjack.zip",
+        "arcadeRomFiles": "01_h03t.bin+02_p04t.bin+02_p04t.bin+03_e08t.bin+03_e08t.bin+04_h08t.bin+04_h08t.bin+05_k08t.bin+05_k08t.bin+06_l08t.bin+07_n08t.bin+08_r08t.bin+09_j01b.bin+10_l01b.bin+11_m01b.bin+12_n01b.bin+13.1r+14_j07b.bin+15_l07b.bin+16_m07b.bin",
+        "arcadeRomOutput": "a.bmbjck.rom"
     },
     "computerspace": {
         "type": "arcade",
@@ -495,7 +531,10 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "ckongpt2.zip",
+        "arcadeRomFiles": "7.5d+8.5e+9.5h+10.5k+11.5l+12.5n+12.5n+12.5n+12.5n+12.5n+12.5n+12.5n+12.5n+12.5n+12.5n+12.5n+6.11n+5.11l+4.11k+3.11h+2.11c+1.11a+2.11c+1.11a+14.5s+13.5p",
+        "arcadeRomOutput": "a.ckong.rom"
     },
     "crushroller": {
         "type": "arcade",
@@ -531,7 +570,11 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "froggers2.zip",
+        "arcadeRomFiles": "epr-1012.ic5+epr-1013a.ic6+epr-1014.ic7+epr-1015.ic8+epr-606.ic102+epr-607.ic101+epr-608.ic32+epr-609.ic33+epr-610.ic34",
+        "arcadeRomOutput": "a.frggr.rom"
+ 
     },
     "galaga": {
         "type": "arcade",
@@ -710,7 +753,10 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "cavenger.zip",
+        "arcadeRomFiles": "1.c4+2.d4+3.e4+4.h4+5.j4+6.k4+8.l7+8.l7+9.f7+0.h7",
+        "arcadeRomOutput": "a.csmvng.rom"
     },
     "dorodon": {
         "type": "arcade",
@@ -782,7 +828,10 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "blkhole.zip",
+        "arcadeRomFiles": "bh1+bh2+bh3+bh4+bh5+bh6+bh6+bh6+bh7+bh7+bh8+bh8",
+        "arcadeRomOutput": "a.blckhl.rom"
     },
     "mrdonightmare": {
         "type": "arcade",
@@ -806,6 +855,24 @@
         "releaseDateFormat": "YYYYMMDD",
         "target": null,
         "additionalDataDir": null,
-        "additionalData": null
+        "additionalData": null,
+        "arcadeRom": "amidars.zip",
+        "arcadeRomFiles": "am2d+am2e+am2f+am2h+am2j+am2l+am2m+am2p+2716.a5+2716.a6+amidarus.5c+amidarus.5d",
+        "arcadeRomOutput": "a.amidar.rom"
+    },
+    "alibaba": {
+        "type": "arcade",
+        "name": "Arcade - Alibaba and 40 thieves",
+        "repo": "MiSTer-devel/Arcade-Alibaba_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": {},
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null,
+        "arcadeRom": "alibaba.zip",
+        "arcadeRomFiles": "6e+6f+6h+6k+6l+6l+6m+6m+6m+6m+5e+5h+5f+5k",
+        "arcadeRomOutput": "a.alibbt.rom"
     }
 }
