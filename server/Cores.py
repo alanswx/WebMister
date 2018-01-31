@@ -24,9 +24,9 @@ class Cores:
             return {}
 
         coreinfo = {}
-        print(core)
-        print(self.manifest[core])
-        print(self.manifest[core]['additionalData'])
+        #print(core)
+        #print(self.manifest[core])
+        #print(self.manifest[core]['additionalData'])
         if (self.manifest[core]['additionalData']):
            directory = os.path.join(self.mister_root,self.manifest[core]['additionalDataDir'])
            additional=[]
@@ -48,10 +48,13 @@ class Cores:
         return coreinfo 
 
     def update_cores_from_disk(self):
+        print("update_cores_from_disk")
+        #core_list = {}
         for core in self.manifest:
-            self.update_core_from_disk(core)
-        print(self.diskdata)
-        return self.diskdata
+            thiscore = self.update_core_from_disk(core)
+            #core_list[core] = thiscore
+        #print(self.diskdata)
+        return self.diskdata 
 
 
 if __name__ == "__main__":
