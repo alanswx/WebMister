@@ -39,18 +39,18 @@ class ArcadeRom:
            print(name)
            data = zf.read(name)
            romfile.write(data)
-           print name, len(data), repr(data[:10])
+           print (name, len(data), repr(data[:10]))
         romfile.close()
-        print zf.namelist()
+        print (zf.namelist())
         for info in zf.infolist():
-            print info.filename
-            print '\tComment:\t', info.comment
-            print '\tModified:\t', datetime.datetime(*info.date_time)
-            print '\tSystem:\t\t', info.create_system, '(0 = Windows, 3 = Unix)'
-            print '\tZIP version:\t', info.create_version
-            print '\tCompressed:\t', info.compress_size, 'bytes'
-            print '\tUncompressed:\t', info.file_size, 'bytes'
-            print
+            print (info.filename)
+            print ('\tComment:\t', info.comment)
+            print ('\tModified:\t', datetime.datetime(*info.date_time))
+            print ('\tSystem:\t\t', info.create_system, '(0 = Windows, 3 = Unix)')
+            print ('\tZIP version:\t', info.create_version)
+            print ('\tCompressed:\t', info.compress_size, 'bytes')
+            print ('\tUncompressed:\t', info.file_size, 'bytes')
+            print()
 
 if __name__ == "__main__":
      arcadeRom= ArcadeRom(os.path.join(sys.path[0],".."),os.path.join(sys.path[0],"../../InstallerMister/misterinst"))
