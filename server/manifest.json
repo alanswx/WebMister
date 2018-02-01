@@ -461,7 +461,7 @@
         "additionalDataDir": null,
         "additionalData": null,
         "arcadeRom": "bagman.zip",
-        "arcadeRomFiles": "e9_b05.bin+f9_b06.bin+f9_b07.bin+k9_b08.bin+m9_b09s.bin+n9_b10.bin+t9_b12.bin+t9_b12.bin+t9_b12.bin +t9_b12.bin +t9_b12.bin +t9_b12.bin +t9_b12.bin +t9_b12.bin +t9_b12.bin +t9_b12.bin +e1_b02.bin+c1_b01.bin+j1_b04.bin+f1_b03s.bin+r9_b11.bin+t9_b12.bin",
+        "arcadeRomFiles": "e9_b05.bin+f9_b06.bin+f9_b07.bin+k9_b08.bin+m9_b09s.bin+n9_b10.bin+t9_b12.bin+t9_b12.bin+t9_b12.bin+t9_b12.bin+t9_b12.bin+t9_b12.bin+t9_b12.bin+t9_b12.bin+t9_b12.bin+t9_b12.bin+e1_b02.bin+c1_b01.bin+j1_b04.bin+f1_b03s.bin+r9_b11.bin+t9_b12.bin",
         "arcadeRomOutput": "a.bagman.rom"
     },
     "burgertime": {
