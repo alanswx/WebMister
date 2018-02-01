@@ -24,9 +24,24 @@ class ArcadeRom:
 
         # AJS - TODO - fix directory paths for both read and write rom (zip and .rom)
         thiscore = self.manifest[core]
-        arcadeRom = thiscore["arcadeRom"]
-        arcadeRomFiles = thiscore["arcadeRomFiles"]
-        arcadeRomOutput= thiscore["arcadeRomOutput"] 
+        arcadeRom = ''
+        try:
+            if thiscore["arcadeRom"]:
+                arcadeRom = thiscore["arcadeRom"]
+        except KeyError:
+            return { "message" : "Rom not in manifest"}
+        arcadeRomFiles = ''
+        try:
+            if thiscore["arcadeRomFiles"]:
+                arcadeRomFiles = thiscore["arcadeRomFiles"]
+        except KeyError:
+            return { "message" : "Rom Files not in manifest"}
+        arcadeRomOutput= ''
+        try:
+            if thiscore["arcadeRomOutput"]:
+                return { "message" : "Rom Output Files not in manifest"}
+        except KeyError:
+            arcadeRomOutput = ''
         arcadeRomPath = os.path.join(self.mister_root,arcadeRom)
         arcadeRomOutputPath = os.path.join(self.mister_root,arcadeRomOutput)
         #print(arcadeRom)
