@@ -994,7 +994,7 @@
         "target": null,
         "additionalDataDir": null,
         "additionalData": null,
-        "arcadeRom": "galaxianm.zip",
+        "arcadeRom": "galaxian.zip",
         "arcadeRomFiles": "galmidw.u+galmidw.v+galmidw.w+galmidw.y+7l+7l+7l+7l+1h.bin+1h.bin+1k.bin+1k.bin",
         "arcadeRomOutput": "a.galaxn.rom"
     },
