@@ -638,7 +638,7 @@
         "target": null,
         "additionalDataDir": null,
         "additionalData": null,
-        "arcadeRom": "mspacmab.zip",
+        "arcadeRom": "mspacman.zip",
         "arcadeRomFiles": "pacman.6e+pacman.6f+pacman.6h+pacman.6j+u5+u5+u6+u7+u7+5e+5f",
         "arcadeRomOutput": "a.mspcmn.rom"
     },
