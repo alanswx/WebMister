@@ -20,6 +20,15 @@ class Platform extends React.Component {
       console.log(release);
 
       const humanSize = (size / 1000000).toFixed(2);
+      let install_dir='';
+      let re = new RegExp(platform.releaseFormat);
+      if (re.exec(name))
+          install_dir='';
+      else if (platform.additionalDataDir)
+          install_dir=platform.additionalDataDir+'/';
+      install_dir=install_dir+name;
+         
+      const install_url = '/api/download_url?dest='+install_dir+'&url='+download_url;
       return (
         <Table.Row>
           <Table.Cell>
@@ -32,6 +41,9 @@ class Platform extends React.Component {
           </Table.Cell>
         <Table.Cell>
           <Button as="a" href={ download_url }>{`${humanSize}MB`}</Button>
+        </Table.Cell>
+        <Table.Cell>
+          <Button as="a" href={ install_url }>Install</Button>
         </Table.Cell>
         </Table.Row>
       );
