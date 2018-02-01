@@ -594,7 +594,7 @@
         "additionalDataDir": null,
         "additionalData": null,
         "arcadeRom": "galagamw.zip",
-        "arcadeRomFiles": "3200a.bin+3300b.bin+3400c.bin+3500d.bin+3600e.bin+3700g.bin+2800l.bin+ 2700k.bin+2600j.bin",
+        "arcadeRomFiles": "3200a.bin+3300b.bin+3400c.bin+3500d.bin+3600e.bin+3700g.bin+2800l.bin+2700k.bin+2600j.bin",
         "arcadeRomOutput": "a.galaga.rom"
     },
     "lizardwizard": {
