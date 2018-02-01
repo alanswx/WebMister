@@ -39,13 +39,13 @@ class ArcadeRom:
         arcadeRomOutput= ''
         try:
             if thiscore["arcadeRomOutput"]:
-                return { "message" : "Rom Output Files not in manifest"}
+                arcadeRomOutput = thiscore["arcadeRomOutput"]
         except KeyError:
-            arcadeRomOutput = ''
+            return { "message" : "Rom Output Files not in manifest"}
         arcadeRomPath = os.path.join(self.mister_root,arcadeRom)
         arcadeRomOutputPath = os.path.join(self.mister_root,arcadeRomOutput)
-        #print(arcadeRom)
-        #print(arcadeRomFiles)
+        print(arcadeRom)
+        print(arcadeRomFiles)
         #print(arcadeRomOutput)
         arcadeRomFileParts = arcadeRomFiles.split("+")
         try:
@@ -59,28 +59,30 @@ class ArcadeRom:
         except Exception as e:
             return { "message" : str(e)}
         for name in arcadeRomFileParts:
-           #print("arcade file:")
-           #print(name)
+           print("arcade file:")
+           print('['+name+']')
            try:
               data = zf.read(name)
            except Exception as e:
               return { "message" : str(e)}
            romfile.write(data)
-           #print (name, len(data), repr(data[:10]))
+           print (name, len(data), repr(data[:10]))
         romfile.close()
+        print (zf.namelist())
+        for info in zf.infolist():
+            print (info.filename)
+            print ('\tComment:\t', info.comment)
+            print ('\tModified:\t', datetime.datetime(*info.date_time))
+            print ('\tSystem:\t\t', info.create_system, '(0 = Windows, 3 = Unix)')
+            print ('\tZIP version:\t', info.create_version)
+            print ('\tCompressed:\t', info.compress_size, 'bytes')
+            print ('\tUncompressed:\t', info.file_size, 'bytes')
+            print()
         zf.close()
         return { "message" : "OK"}
-        #print (zf.namelist())
-        #for info in zf.infolist():
-        #    print (info.filename)
-        #    print ('\tComment:\t', info.comment)
-        #    print ('\tModified:\t', datetime.datetime(*info.date_time))
-        #    print ('\tSystem:\t\t', info.create_system, '(0 = Windows, 3 = Unix)')
-        #    print ('\tZIP version:\t', info.create_version)
-        #    print ('\tCompressed:\t', info.compress_size, 'bytes')
-        #    print ('\tUncompressed:\t', info.file_size, 'bytes')
-        #    print()
 
 if __name__ == "__main__":
      arcadeRom= ArcadeRom(os.path.join(sys.path[0],".."),os.path.join(sys.path[0],"../../InstallerMister/misterinst"))
-     arcadeRom.convertRom("frogger")
+     #res=arcadeRom.convertRom("scramble")
+     res=arcadeRom.convertRom("xevious")
+     print(res)
