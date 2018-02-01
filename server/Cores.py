@@ -43,6 +43,19 @@ class Cores:
         #print(core)
         #print(self.manifest[core])
         #print(self.manifest[core]['additionalData'])
+        if (self.manifest[core]['arcadeRom']):
+            filename = os.path.join(self.mister_root,self.manifest[core]['arcadeRom'])
+            if (os.path.exists(filename)):
+               files = self.findCoreFiles(self.manifest[core]['releaseFormat'])
+               stats = os.stat(filename)
+               e = {}
+               e['target']     = self.manifest[core]['arcadeRom']
+               e['created']     = int(stats.st_ctime)
+               e['modified']     = int(stats.st_mtime)
+               e['timestamp']     = int(stats.st_mtime)
+               e['sizeondisk']     = int(stats.st_size)
+               coreinfo['arcadeRom']=e
+
         if (self.manifest[core]['releaseFormat']):
             files = self.findCoreFiles(self.manifest[core]['releaseFormat'])
             coreinfo['releaseFiles']=files

@@ -9,6 +9,7 @@ from flask import Flask, send_from_directory, request
 from server.File import bluePrint as fileBluePrint
 
 from server.Cores import Cores
+from server.ArcadeRom import ArcadeRom
 
 
 DIR = sys.path[0]
@@ -19,6 +20,7 @@ MISTERDIR  = os.path.join(DIR,"../InstallerMister/misterinst")
 # The Core class deals with installed files on disk
 #
 core = Cores(DIR,MISTERDIR)
+arcadeRom= ArcadeRom(DIR,MISTERDIR)
 
 #
 # setup flask and point /static to the right place
@@ -87,6 +89,11 @@ def download_url():
      
     return json.dumps(result)
     
+@app.route("/api/convert_rom")
+def convert_rom():
+    core = request.args.get('core')
+    result=arcadeRom.convertRom(core)
+    return json.dumps(result)
 
 if __name__ == "__main__":
     app.run(debug=True,host='0.0.0.0')
