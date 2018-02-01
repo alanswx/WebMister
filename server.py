@@ -2,6 +2,7 @@ import json
 import subprocess
 import sys
 import os
+import urllib.request
 
 from flask import Flask, send_from_directory, request
 
@@ -68,6 +69,23 @@ def local_files_for_core():
 @app.route("/api/get_local_files_for_all_cores")
 def local_files_for_all_cores():
     return json.dumps(core.update_cores_from_disk())
+
+@app.route("/api/download_url")
+def download_url():
+    url= request.args.get('url')
+    dest= request.args.get('dest')
+    file_name = os.path.join(MISTERDIR,dest)
+    os.path.abspath(file_name).startswith(MISTERDIR)
+    result = {}
+    try:
+       fn,headers = urllib.request.urlretrieve(url,file_name)
+       # we might look inside the structure and report a more machine readable error
+       result = { "message": "OK" }
+    except Exception as e:
+       result = { "message": str(e) }
+       print(e)
+     
+    return json.dumps(result)
     
 
 if __name__ == "__main__":
