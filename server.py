@@ -13,7 +13,9 @@ from server.ArcadeRom import ArcadeRom
 
 
 DIR = sys.path[0]
-MISTERDIR  = os.path.join(DIR,"../InstallerMister/misterinst")
+DIR = os.path.abspath(DIR)
+MISTERDIR = os.path.join(DIR,"../InstallerMister/misterinst")
+MISTERDIR = os.path.abspath(MISTERDIR)
 
 
 #
@@ -77,15 +79,23 @@ def download_url():
     url= request.args.get('url')
     dest= request.args.get('dest')
     file_name = os.path.join(MISTERDIR,dest)
-    os.path.abspath(file_name).startswith(MISTERDIR)
     result = {}
-    try:
+    #print(file_name) 
+    #print(MISTERDIR) 
+    #print(os.path.abspath(file_name))
+    if os.path.abspath(file_name).startswith(MISTERDIR):
+      try:
+       dirname = os.path.dirname(file_name)
+       print(dirname) 
+       os.makedirs(dirname)
        fn,headers = urllib.request.urlretrieve(url,file_name)
        # we might look inside the structure and report a more machine readable error
        result = { "message": "OK" }
-    except Exception as e:
+      except Exception as e:
        result = { "message": str(e) }
        print(e)
+    else:
+       result = { "message": "Invalid Path: "+dest}
      
     return json.dumps(result)
     
