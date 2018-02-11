@@ -17,6 +17,7 @@ DIR = os.path.abspath(DIR)
 MISTERDIR = os.path.join(DIR,"../InstallerMister/misterinst")
 MISTERDIR = os.path.abspath(MISTERDIR)
 
+fileBluePrint.MISTERDIR=MISTERDIR
 
 #
 # The Core class deals with installed files on disk

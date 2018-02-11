@@ -53,6 +53,7 @@ class FileManager:
         file        = request.args.get('path').lstrip("/")
         path        = os.path.join(self.root,file)
         print('mount: '+file+' '+path)
+     
         if (self.is_safe_path(path)):
            response    = FileManagerResponse(path)
            response.set_response()

@@ -43,7 +43,8 @@ class Cores:
         #print(core)
         #print(self.manifest[core])
         #print(self.manifest[core]['additionalData'])
-        if (self.manifest[core]['arcadeRom']):
+        try:
+          if (self.manifest[core]['arcadeRom']):
             filename = os.path.join(self.mister_root,self.manifest[core]['arcadeRom'])
             if (os.path.exists(filename)):
                files = self.findCoreFiles(self.manifest[core]['releaseFormat'])
@@ -55,10 +56,19 @@ class Cores:
                e['timestamp']     = int(stats.st_mtime)
                e['sizeondisk']     = int(stats.st_size)
                coreinfo['arcadeRom']=e
+        except KeyError as e:
+           pass
+           #print('KeyError')
+           #print(e)
 
-        if (self.manifest[core]['releaseFormat']):
+
+        try:
+         if (self.manifest[core]['releaseFormat']):
+            #print(self.manifest[core]['releaseFormat'])
             files = self.findCoreFiles(self.manifest[core]['releaseFormat'])
             coreinfo['releaseFiles']=files
+        except Exception as e:
+           print(e)
         if (self.manifest[core]['additionalData']):
            directory = os.path.join(self.mister_root,self.manifest[core]['additionalDataDir'])
            additional=[]

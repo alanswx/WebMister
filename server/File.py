@@ -15,6 +15,7 @@ def indexAction():
 @bluePrint.route('/connectors/python/filemanager', methods = ['GET','POST'])
 def fileManagerAction():
     ''' File Manager API endpoint '''
+    print(bluePrint.MISTERDIR)
     fileManager = FileManager()
     mode = None
     if request.method == 'POST':
