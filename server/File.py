@@ -1,10 +1,7 @@
 #!/usr/bin/python3
 from flask import Blueprint, request, render_template, make_response
 from server.FileManager import FileManager
-from server.MasterFileManager import MasterFileManager
-from server.Mount import Mount
 
-mounts = Mount()
 
 #bluePrint = Blueprint('fileBluePrint', __name__, url_prefix='/files',template_folder='templates')
 bluePrint = Blueprint('fileBluePrint', __name__, template_folder='templates')
@@ -18,7 +15,7 @@ def indexAction():
 @bluePrint.route('/connectors/python/filemanager', methods = ['GET','POST'])
 def fileManagerAction():
     ''' File Manager API endpoint '''
-    fileManager = MasterFileManager(mounts)
+    fileManager = FileManager()
     mode = None
     if request.method == 'POST':
         if 'mode' in request.form:

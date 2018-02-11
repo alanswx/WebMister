@@ -7,16 +7,10 @@ from PIL import Image
 class FileManagerResponse(object):
     # absolute path to base folder
     root = os.path.join(os.path.dirname(os.path.abspath(__file__)),'files')
-    def __init__(self,root,path,mountid):
+    def __init__(self,path):
         ''' Init '''
-        self.root=root
         self.path          = path # absolute path to file or folder
-        self.mountid          = mountid # absolute path to file or folder
-        print('self.root:'+self.root)
-        print('self.path:'+self.path)
         self.relative_path = re.sub('^'+self.root, '', self.path) # path from file manager base folder
-        print('self.relative_path:'+self.relative_path)
-        self.relative_path=self.mountid+self.relative_path
         self.type          = 'folder' if os.path.isdir(path) else 'file'
         self.statinfo      = os.stat(self.path)
         self.attributes    = None

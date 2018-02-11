@@ -46,6 +46,8 @@ Using the mame rom name (ie: pacman.zip) from the manifest.json it converts it i
 * Python >= `3.x`
 * NodeJS >= `8.x`
 
+* sudo apt-get install python3-parted
+
 ### Client
 
 From the `client` directory run the following:
