@@ -14,6 +14,8 @@ from .FileManagerResponse import *
 class FileManager:
     # Path to your files root
     root = os.path.join(os.path.dirname(os.path.abspath(__file__)),'files')
+    def __init__(self,rootpath):
+       self.root=rootpath
     def fileManagerError(self,title='FORBIDDEN_CHAR_SLASH'):
        return self.error(title)
     def is_safe_path(self,path, follow_symlinks=True):
@@ -55,7 +57,7 @@ class FileManager:
         print('mount: '+file+' '+path)
      
         if (self.is_safe_path(path)):
-           response    = FileManagerResponse(path)
+           response    = FileManagerResponse(path,self.root)
            response.set_response()
            return jsonify(response.response)
            #return self.readfolder_folder("")
@@ -68,7 +70,7 @@ class FileManager:
         file        = request.args.get('path').lstrip("/")
         path        = os.path.join(self.root,file)
         if (self.is_safe_path(path)):
-           response    = FileManagerResponse(path)
+           response    = FileManagerResponse(path,self.root)
            response.set_response()
            return jsonify(response.response)
         else:
@@ -82,7 +84,7 @@ class FileManager:
         if (self.is_safe_path(folder_path)):
            for file in os.listdir(folder_path):
                path        = os.path.join(folder_path,file)
-               response    = FileManagerResponse(path)
+               response    = FileManagerResponse(path,self.root)
                response.set_data()
                data.append(response.data)
            results         = {}
@@ -99,7 +101,7 @@ class FileManager:
         if (self.is_safe_path(path)):
            if not os.path.exists(folder_path):
                os.makedirs(folder_path)
-           response    = FileManagerResponse(folder_path)
+           response    = FileManagerResponse(folder_path,self.root)
            response.set_response()
            return jsonify(response.response)
         else:
@@ -119,7 +121,7 @@ class FileManager:
                 file_path = os.path.join(self.root,path,filename)
                 if (self.is_safe_path(file_path)):
                    file.save(file_path)
-                   response  = FileManagerResponse(file_path)
+                   response  = FileManagerResponse(file_path,self.root)
                    response.set_response()
                    return jsonify(response.response)
                 else:
@@ -146,7 +148,7 @@ class FileManager:
            new_path = os.path.join(self.root,path,new)
         if (self.is_safe_path(new_path)):
            os.rename(old_path, new_path)
-           response = FileManagerResponse(new_path)
+           response = FileManagerResponse(new_path,self.root)
            response.set_response()
            return jsonify(response.response)
         else:
@@ -169,7 +171,7 @@ class FileManager:
               look = new_path
            else:
               look = new_path+'/'+parts[len(parts)-1]
-           response = FileManagerResponse(look)
+           response = FileManagerResponse(look,self.root)
            response.set_response()
            return jsonify(response.response)
         else:
@@ -188,7 +190,7 @@ class FileManager:
         new_path = os.path.join(self.root,new,filename)
         if (self.is_safe_path(new_path) and self.is_safe_path(old_path)):
            shutil.copyfile(old_path, new_path)
-           response = FileManagerResponse(new_path)
+           response = FileManagerResponse(new_path,self.root)
            response.set_response()
            return jsonify(response.response)
         else:
@@ -203,7 +205,7 @@ class FileManager:
            if os.path.isfile(path):
                with open(path, "w") as fh:
                    fh.write(content)
-           response = FileManagerResponse(path)
+           response = FileManagerResponse(path,self.root)
            response.set_response()
            return jsonify(response.response)
         else:
@@ -213,7 +215,7 @@ class FileManager:
         ''' Deletes an existed file or folder. '''
         file    = request.args.get('path').lstrip("/")
         path    = os.path.join(self.root,file)
-        response = FileManagerResponse(path)
+        response = FileManagerResponse(path,self.root)
         response.set_response()
         if (self.is_safe_path(path)):
            if os.path.isdir(path):
@@ -240,7 +242,7 @@ class FileManager:
         filename = parts.pop()
         # Check for AJAX request
         if request.is_xhr:
-            response = FileManagerResponse(path)
+            response = FileManagerResponse(path,self.root)
             response.set_response()
             return jsonify(response.response)
         else:
@@ -310,7 +312,7 @@ class FileManager:
            data            = []
            for file in os.listdir(target_path):
                path        = os.path.join(target_path,file)
-               response    = FileManagerResponse(path)
+               response    = FileManagerResponse(path,self.root)
                response.set_data()
                data.append(response.data)
            results         = {}

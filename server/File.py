@@ -16,7 +16,7 @@ def indexAction():
 def fileManagerAction():
     ''' File Manager API endpoint '''
     print(bluePrint.MISTERDIR)
-    fileManager = FileManager()
+    fileManager = FileManager(bluePrint.MISTERDIR)
     mode = None
     if request.method == 'POST':
         if 'mode' in request.form:

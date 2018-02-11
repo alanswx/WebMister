@@ -7,8 +7,9 @@ from PIL import Image
 class FileManagerResponse(object):
     # absolute path to base folder
     root = os.path.join(os.path.dirname(os.path.abspath(__file__)),'files')
-    def __init__(self,path):
+    def __init__(self,path,rootpath):
         ''' Init '''
+        self.root=rootpath
         self.path          = path # absolute path to file or folder
         self.relative_path = re.sub('^'+self.root, '', self.path) # path from file manager base folder
         self.type          = 'folder' if os.path.isdir(path) else 'file'
