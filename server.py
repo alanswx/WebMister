@@ -88,7 +88,10 @@ def download_url():
       try:
        dirname = os.path.dirname(file_name)
        print(dirname) 
-       os.makedirs(dirname)
+       try:
+          os.makedirs(dirname)
+       except:
+          pass
        fn,headers = urllib.request.urlretrieve(url,file_name)
        # we might look inside the structure and report a more machine readable error
        result = { "message": "OK" }
