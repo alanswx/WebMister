@@ -66,7 +66,7 @@ class Platform extends React.Component {
            }
       }
       if (platform.additionalDataDir)
-         link='/files/filemanager?exclusiveFolder=/Cores/'+platform.additionalDataDir;
+         link='/files/filemanager?exclusiveFolder=/'+platform.additionalDataDir;
     }
 
     return platform ? (

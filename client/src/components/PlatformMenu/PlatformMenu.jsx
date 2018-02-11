@@ -1,7 +1,7 @@
 import 'whatwg-fetch';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon, Input, Menu, Image } from 'semantic-ui-react';
+import {  Input, Menu, Image } from 'semantic-ui-react';
 
 class PlatformMenu extends React.Component {
   constructor(props) {
