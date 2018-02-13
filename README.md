@@ -62,6 +62,12 @@ From the root directory run the following:
 * `pip install -r requirements.txt`
 * `python server.py  --host=0.0.0.0`
 
+for mounting, it requires:
+* HFS Support: https://github.com/alanswx/LinuxFuseHFS
+* FAT16/FAT32 Support: https://github.com/alanswx/fusefat
+* CBM Images: http://llg.cubic.org/tools/cbmfs/
+* Zipfiles: sudo apt-get install fuse-zip
+
 ## Usage
 
 Navigate to `localhost:5000`
