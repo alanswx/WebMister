@@ -60,8 +60,13 @@ From the `client` directory run the following:
 From the root directory run the following:
 
 * `pip install -r requirements.txt`
-* `python server.py`
+* `python server.py  --host=0.0.0.0`
 
 ## Usage
 
 Navigate to `localhost:5000`
+
+
+## Notes
+ `sudo losetup --show -f -P /home/alans/mister/InstallerMister/misterinst/ao486/win95.vhd`
+ `sudo mount /dev/loop1p1 mountpoint`

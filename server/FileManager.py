@@ -8,16 +8,21 @@ from zipfile import ZipFile
 from flask import request, jsonify, send_file
 from werkzeug.utils import secure_filename
 from .FileManagerResponse import *
-
+from .Mounts import Mounts
 
 
 class FileManager:
     # Path to your files root
     root = os.path.join(os.path.dirname(os.path.abspath(__file__)),'files')
-    def __init__(self,rootpath):
+    mounts = None
+
+    def __init__(self,rootpath,mounts):
        self.root=rootpath
+       self.mounts=mounts
+
     def fileManagerError(self,title='FORBIDDEN_CHAR_SLASH'):
        return self.error(title)
+
     def is_safe_path(self,path, follow_symlinks=True):
        basedir = self.root
        # resolves symbolic links
@@ -57,6 +62,7 @@ class FileManager:
         print('mount: '+file+' '+path)
      
         if (self.is_safe_path(path)):
+           self.mounts.mountfile(path)
            response    = FileManagerResponse(path,self.root)
            response.set_response()
            return jsonify(response.response)

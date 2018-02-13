@@ -15,6 +15,7 @@ from server.ArcadeRom import ArcadeRom
 DIR = sys.path[0]
 DIR = os.path.abspath(DIR)
 MISTERDIR = os.path.join(DIR,"../InstallerMister/misterinst")
+MISTERDIR = os.path.join(DIR,"../install_files/goodimage/image/")
 MISTERDIR = os.path.abspath(MISTERDIR)
 
 fileBluePrint.MISTERDIR=MISTERDIR
