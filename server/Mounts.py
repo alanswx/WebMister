@@ -6,6 +6,10 @@ import time
 
 class Mounts:
     mounts = []
+    def __init__(self):
+       print('init')
+       self.mounts = []
+
     def _call_mount(self,mountcommand):
        try:
            mount_output = subprocess.check_output(mountcommand.split(' '), stderr=subprocess.STDOUT)
@@ -14,11 +18,17 @@ class Mounts:
          mount_output = e
        return mount_output
     def _call_unmount(self,path):
+       print("_call_unmount:"+path)
        try:
            unmount_output = subprocess.check_output(['fusermount','-u',path], stderr=subprocess.STDOUT)
        except subprocess.CalledProcessError as e:
 #        hmount_output = (True, e)
          unmount_output = e
+         print(e)
+         sys.stdout.flush()
+
+       print(unmount_output)
+       sys.stdout.flush()
        return unmount_output
 
     def mountfile(self,filename):
@@ -37,8 +47,10 @@ class Mounts:
         m['name']=namepart
         m['filename']=filename_full
         self.mounts.append(m)
+        print(self.mounts)
 
     def unmount(self,filename):
+        print('unmount:'+filename)
         filename_full=os.path.abspath(filename)
         namepart, file_extension = os.path.splitext(filename_full)
         print(self._call_unmount(namepart))
@@ -49,8 +61,11 @@ class Mounts:
       
 
     def unmountall(self):
+        print('unmountall')
         for m in self.mounts:
+           print(m)
            self.unmount(m['filename'])
+        self.mounts = []
 
     def lookupPartitions(self,device_name):
         result = []
