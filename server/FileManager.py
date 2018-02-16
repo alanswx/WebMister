@@ -69,6 +69,20 @@ class FileManager:
            #return self.readfolder_folder("")
         else:
            return self.fileManagerError()
+#===============================================================================
+    def unmount(self):
+        file        = request.args.get('path').lstrip("/")
+        path        = os.path.join(self.root,file)
+        print('mount: '+file+' '+path)
+     
+        if (self.is_safe_path(path)):
+           response    = FileManagerResponse(path,self.root)
+           response.set_response()
+           self.mounts.unmountfile(path)
+           return jsonify(response.response)
+           #return self.readfolder_folder("")
+        else:
+           return self.fileManagerError()
 
 #===============================================================================
     def getinfo(self):

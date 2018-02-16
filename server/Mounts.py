@@ -3,12 +3,16 @@ import mmap
 import os
 import subprocess
 import time
+import re
+
 
 class Mounts:
     mounts = []
     def __init__(self):
        print('init')
        self.mounts = []
+       self.loadmounts()
+
 
     def _call_mount(self,mountcommand):
        try:
@@ -17,6 +21,7 @@ class Mounts:
 #        hmount_output = (True, e)
          mount_output = e
        return mount_output
+
     def _call_unmount(self,path):
        print("_call_unmount:"+path)
        try:
@@ -25,11 +30,30 @@ class Mounts:
 #        hmount_output = (True, e)
          unmount_output = e
          print(e)
-         sys.stdout.flush()
 
        print(unmount_output)
-       sys.stdout.flush()
        return unmount_output
+
+    def loadmounts(self):
+        mountstr=self._call_mount("mount")
+        mountstr=mountstr.decode('utf-8')
+        lines=mountstr.split("\n")
+        p = re.compile('(.*) on (.*) type (.*) (\(.*\))')
+        for line in lines:
+           matches = p.match(line)
+           if matches:
+               device=matches.group(1)
+               mount=matches.group(2)
+               mounttype=matches.group(3)
+               # AJS - should check to see if this mount is within our filepath
+               if mounttype=='fuse':
+                   print(device,mount,mounttype)
+                   print(line)
+                   m={}
+                   m['cmd']=''
+                   m['name']=mount
+                   m['filename']=device
+                   self.mounts.append(m)
 
     def mountfile(self,filename):
         filename_full=os.path.abspath(filename)
@@ -39,15 +63,16 @@ class Mounts:
         except Exception as e:
             pass
         mountcommand = self.lookupMountCommand(filename)
-        self._call_mount(mountcommand)        
-        print("mountfile: ["+filename+"]")
-        print(mountcommand)
-        m = {}
-        m['cmd']=mountcommand
-        m['name']=namepart
-        m['filename']=filename_full
-        self.mounts.append(m)
-        print(self.mounts)
+        if (mountcommand):
+            self._call_mount(mountcommand)        
+            print("mountfile: ["+filename+"]")
+            print(mountcommand)
+            m = {}
+            m['cmd']=mountcommand
+            m['name']=namepart
+            m['filename']=filename_full
+            self.mounts.append(m)
+            print(self.mounts)
 
     def unmount(self,filename):
         print('unmount:'+filename)
@@ -55,10 +80,24 @@ class Mounts:
         namepart, file_extension = os.path.splitext(filename_full)
         print(self._call_unmount(namepart))
         time.sleep(0.1) 
-        os.rmdir(namepart)
+        try:
+            os.rmdir(namepart)
+        except Exception as e:
+            print(e)
+
         print("unmount")
         print(filename)
       
+    def unmountfile(self,filename):
+        # remove from self.mounts
+        newmounts=[]
+        for m in self.mounts:
+           print(m)
+           if (m['name']!=filename):
+              newmounts.append(m)
+           else:
+              self.unmount(m['filename'])
+        self.mounts = newmounts
 
     def unmountall(self):
         print('unmountall')
@@ -123,6 +162,7 @@ class Mounts:
             except Exception as e:
                 #print (e)
                 pass
+        return None
 
         # check for CBM file
         #"cbmfsmount"
@@ -223,7 +263,8 @@ class Mounts:
 
 
 if __name__ == "__main__":
-    mount = Mounts("/")
+    mount = Mounts()
+    exit()
     devices = []
     devices.append("files/boot.vhd")
     devices.append("/home/alans/mister/InstallerMister/misterinst/ao486/win95.vhd")
