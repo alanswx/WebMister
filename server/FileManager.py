@@ -73,9 +73,10 @@ class FileManager:
     def unmount(self):
         file        = request.args.get('path').lstrip("/")
         path        = os.path.join(self.root,file)
-        print('mount: '+file+' '+path)
+        print('unmount: '+file+' '+path)
      
         if (self.is_safe_path(path)):
+           print("is safe path");
            response    = FileManagerResponse(path,self.root)
            response.set_response()
            self.mounts.unmountfile(path)

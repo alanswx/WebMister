@@ -75,7 +75,7 @@ class Mounts:
             print(self.mounts)
 
     def unmount(self,filename):
-        print('unmount:'+filename)
+        print('Mount.unmount:'+filename)
         filename_full=os.path.abspath(filename)
         namepart, file_extension = os.path.splitext(filename_full)
         print(self._call_unmount(namepart))
@@ -90,10 +90,14 @@ class Mounts:
       
     def unmountfile(self,filename):
         # remove from self.mounts
+        print("unmountfile: "+filename)
         newmounts=[]
         for m in self.mounts:
+           name = m['name'].rstrip("/")
+           filename= filename.rstrip("/")
+           print(name,filename)
            print(m)
-           if (m['name']!=filename):
+           if (name!=filename):
               newmounts.append(m)
            else:
               self.unmount(m['filename'])

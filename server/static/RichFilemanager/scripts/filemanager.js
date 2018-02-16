@@ -3331,6 +3331,8 @@ $.richFilemanagerPlugin = function(element, pluginOptions)
     // Test if resource object has capability
     function isObjectCapable(resourceObject, capability) {
         if (!hasCapability(capability)) return false;
+        if (capability === 'mount' && resourceObject.type === 'folder') return false;
+        if (capability === 'unmount' && resourceObject.type === 'file') return false;
         if (capability === 'select' && resourceObject.type === 'folder') return false;
         if (capability === 'extract') {
             var extension = getExtension(resourceObject.attributes.name);
@@ -4211,6 +4213,29 @@ $.richFilemanagerPlugin = function(element, pluginOptions)
 			}
 		});
 	};
+	var unmountItem = function(resourceObject) {
+		var queryParams = {
+			mode: 'unmount',
+			path: resourceObject.id
+		};
+
+		$.fileDownload(buildConnectorUrl(queryParams), {
+                        abortCallback: function (responseHtml, url, error) { 
+                             fmModel.loadPath("/", true);
+                         },
+                        successCallback: function (responseHtml, url, error) { 
+                             fmModel.loadPath("/", true);
+                          },
+			failCallback: function (responseHtml, url, error) {
+                var message = $(responseHtml).text();
+                             fmModel.loadPath("/", true);
+				var messageJSON = $.parseJSON(message);
+                if ($.isPlainObject(messageJSON) && messageJSON.errors) {
+                    handleJsonErrors(messageJSON.errors);
+                }
+			}
+		});
+	};
 
 	// Save CodeMirror editor content to file
 	var saveItem = function(resourceObject) {
@@ -4380,7 +4405,8 @@ $.richFilemanagerPlugin = function(element, pluginOptions)
                 delete: {name: lg('action_delete'), className: 'delete'},
                 extract: {name: lg('action_extract'), className: 'extract'},
                 copyUrl: {name: lg('copy_to_clipboard'), className: 'copy-url'},
-                mount: {name: "Mount"/*lg('action_mount')*/, className: 'mount'}
+                mount: {name: "Mount"/*lg('action_mount')*/, className: 'mount'},
+                unmount: {name: "Unmount"/*lg('action_mount')*/, className: 'unmount'}
             };
 
 		if(!isObjectCapable(resourceObject, 'download')) delete contextMenuItems.download;
@@ -4389,6 +4415,9 @@ $.richFilemanagerPlugin = function(element, pluginOptions)
 		if(!isObjectCapable(resourceObject, 'delete') || config.options.browseOnly === true) delete contextMenuItems.delete;
 		if(!isObjectCapable(resourceObject, 'extract') || config.options.browseOnly === true) delete contextMenuItems.extract;
 		if(!isObjectCapable(resourceObject, 'copy') || config.options.browseOnly === true || clipboardDisabled) delete contextMenuItems.copy;
+		if(!isObjectCapable(resourceObject, 'unmount') || config.options.browseOnly === true) delete contextMenuItems.unmount;
+
+		if(!isObjectCapable(resourceObject, 'mount') || config.options.browseOnly === true) delete contextMenuItems.mount;
 		if(!isObjectCapable(resourceObject, 'move') || config.options.browseOnly === true || clipboardDisabled) {
             delete contextMenuItems.cut;
             delete contextMenuItems.move;
@@ -4439,6 +4468,11 @@ $.richFilemanagerPlugin = function(element, pluginOptions)
 			case 'mount':
 				$.each(objects, function(i, itemObject) {
 					mountItem(itemObject);
+				});
+				break;
+			case 'unmount':
+				$.each(objects, function(i, itemObject) {
+					unmountItem(itemObject);
 				});
 				break;
 

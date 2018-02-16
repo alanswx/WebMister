@@ -28,7 +28,9 @@
             "delete",
             "extract",
             "edit",
-            "createFolder"
+            "createFolder",
+            "mount",
+            "unmount"
         ]
 
     },
