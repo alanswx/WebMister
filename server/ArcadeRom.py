@@ -62,11 +62,20 @@ class ArcadeRom:
            print("arcade file:")
            print('['+name+']')
            try:
+              df = None
               data = zf.read(name)
            except Exception as e:
-              return { "message" : str(e)}
+              try:
+                  # look for rom on disk
+                  newpath = os.path.join(self.mister_root,name)
+                  df = open(newpath,"rb")
+                  data = df.read()
+              except:
+                  return { "message" : str(e)}
            romfile.write(data)
            print (name, len(data), repr(data[:10]))
+           if df:
+             df.close()
         romfile.close()
         print (zf.namelist())
         for info in zf.infolist():
