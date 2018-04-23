@@ -405,6 +405,18 @@
         "additionalDataDir": "TGFX16",
         "additionalData": null
     },
+    "vectrex": {
+        "type": "console",
+        "name": "Vectrex",
+        "repo": "MiSTer-devel/Vectrex_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": "Vectrex_([0-9]{8}).rbf",
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "VECTREX",
+        "additionalData": null
+    },
     "vector06c": {
         "type": "computer",
         "name": "Vector-06C",
@@ -1114,5 +1126,82 @@
         "arcadeRom": "alibaba.zip",
         "arcadeRomFiles": "6e+6f+6h+6k+6l+6l+6m+6m+6m+6m+5e+5h+5f+5k",
         "arcadeRomOutput": "a.alibbt.rom"
+    },
+    "azurian": {
+        "type": "arcade",
+        "name": "Arcade - Azurian",
+        "repo": "MiSTer-devel/Arcade-Azurian_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": "Arcade-Azurian_([0-9]{8}).rbf",
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null,
+        "arcadeRom": "azurian.zip",
+        "arcadeRomFiles": "pgm.1+pgm.2+pgm.3+pgm.3+gfx.1+gfx.1+gfx.2+gfx.2",
+        "arcadeRomOutput": "a.azurn.rom"
+    },
+    "catacomb": {
+        "type": "arcade",
+        "name": "Arcade - Catacomb",
+        "repo": "MiSTer-devel/Arcade-Catacomb_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": "Arcade-Catacomb_([0-9]{8}).rbf",
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null,
+        "arcadeRom": "catacomb.zip",
+        "arcadeRomFiles": "catacomb.u+catacomb.v+catacomb.w+catacomb.w+catacomb.y+catacomb.y+catacomb.y+catacomb.y+cat-gfx1+cat-gfx1+cat-gfx2+cat-gfx2",
+        "arcadeRomOutput": "a.ctcomb.rom"
+    },
+    "donkeykong": {
+        "type": "arcade",
+        "name": "Arcade - Donkey Kong",
+        "repo": "MiSTer-devel/Arcade-DonkeyKong_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": "Arcade-DonkeyKong_([0-9]{8}).rbf",
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": "dkong",
+        "additionalData": [
+            {
+                "name": "Empty ROM",
+                "remote": "releases/empty.bin",
+                "dir": "dkong",
+                "target": "empty.bin",
+                "type": "binary"
+            },
+            {
+                "name": "DK Wave",
+                "remote": "releases/dk_wave.bin",
+                "dir": "dkong",
+                "target": "dk_wave.bin",
+                "type": "binary"
+            }
+        ],
+        "additionalDataDir": null,
+        "additionalData": null,
+        "arcadeRom": "dkong.zip",
+        "arcadeRomFiles": "c_5et_g.bin+c_5ct_g.bin+c_5bt_g.bin+c_5at_g.bin+c_5at_g.bin+c_5at_g.bin+v_3pt.bin+v_3pt.bin+v_5h_b.bin+v_5h_b.bin+c_5at_g.bin+c_5at_g.bin+l_4m_b.bin+l_4m_b.bin+l_4n_b.bin+l_4n_b.bin+l_4r_b.bin+l_4r_b.bin+l_4s_b.bin+l_4s_b.bin+s_3i_b.bin+s_3j_b.bin+c-2k.bpr+c-2j.bpr+v-5e.bpr+dkong/empty.bin+dkong/dk_wave.bin",
+        "arcadeRomOutput": "a.dkong.rom"
+    },
+    "pisces": {
+        "type": "arcade",
+        "name": "Arcade - Pisces",
+        "repo": "MiSTer-devel/Arcade-Pisces_MiSTer",
+        "branch": "master",
+        "releaseDir": "releases",
+        "releaseFormat": "Arcade-Pisces_([0-9]{8}).rbf",
+        "releaseDateFormat": "YYYYMMDD",
+        "target": null,
+        "additionalDataDir": null,
+        "additionalData": null,
+        "arcadeRom": "pisces.zip",
+        "arcadeRomFiles": "p1.bin+p2.bin+p3.bin+p4.bin+p5.bin+p6.bin+p6.bin+p6.bin+g09.bin+g11.bin+g10.bin+g12.bin",
+        "arcadeRomOutput": "a.pisces.rom"
     }
 }
